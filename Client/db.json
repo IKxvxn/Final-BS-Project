@@ -1,0 +1,246 @@
+{
+  "Departments": [
+    {
+      "Name": "Services",
+      "id": 0
+    },
+    {
+      "Name": "Marketing",
+      "id": 1
+    },
+    {
+      "Name": "Human Resources",
+      "id": 2
+    },
+    {
+      "Name": "Financial",
+      "id": 3
+    },
+    {
+      "Name": "Customer Service",
+      "id": 4
+    },
+    {
+      "Name": "Inventory",
+      "id": 5
+    }
+  ],
+  "Employees": [
+    {
+      "Name": "Parul Gauger",
+      "Phone": "984-0929",
+      "Extension": "436",
+      "CompanyEmail": "paruga@krg.info",
+      "PersonalEmail": "paruga@gmail.com",
+      "Department": 0,
+      "id": 0
+    },
+    {
+      "Name": "Jocelin Fortunato",
+      "Phone": "060-0146",
+      "Extension": "532",
+      "CompanyEmail": "joc_fo@krg.info",
+      "PersonalEmail": "joc_fo@gmail.com",
+      "Department": 0,
+      "id": 1
+    },
+    {
+      "Name": "Fergus Didomenico",
+      "Phone": "867-0445",
+      "Extension": "541",
+      "CompanyEmail": "ferdidomen@krg.info",
+      "PersonalEmail": "ferdidomen@gmail.com",
+      "Department": 0,
+      "id": 2
+    },
+    {
+      "Name": "Parul Gauger",
+      "Phone": "984-0929",
+      "Extension": "436",
+      "CompanyEmail": "paruga@krg.info",
+      "PersonalEmail": "paruga@gmail.com",
+      "Department": 0,
+      "id": 3
+    },
+    {
+      "Name": "Jocelin Fortunato",
+      "Phone": "060-0146",
+      "Extension": "532",
+      "CompanyEmail": "joc_fo@krg.info",
+      "PersonalEmail": "joc_fo@gmail.com",
+      "Department": 0,
+      "id": 4
+    },
+    {
+      "Name": "Fergus Didomenico",
+      "Phone": "867-0445",
+      "Extension": "541",
+      "CompanyEmail": "ferdidomen@krg.info",
+      "PersonalEmail": "ferdidomen@gmail.com",
+      "Department": 0,
+      "id": 5
+    },
+    {
+      "Name": "Parul Gauger",
+      "Phone": "984-0929",
+      "Extension": "436",
+      "CompanyEmail": "paruga@krg.info",
+      "PersonalEmail": "paruga@gmail.com",
+      "Department": 0,
+      "id": 6
+    },
+    {
+      "Name": "Jocelin Fortunato",
+      "Phone": "060-0146",
+      "Extension": "532",
+      "CompanyEmail": "joc_fo@krg.info",
+      "PersonalEmail": "joc_fo@gmail.com",
+      "Department": 0,
+      "id": 7
+    },
+    {
+      "Name": "Fergus Didomenico",
+      "Phone": "867-0445",
+      "Extension": "541",
+      "CompanyEmail": "ferdidomen@krg.info",
+      "PersonalEmail": "ferdidomen@gmail.com",
+      "Department": 0,
+      "id": 8
+    },
+    {
+      "Name": "Parul Gauger",
+      "Phone": "984-0929",
+      "Extension": "436",
+      "CompanyEmail": "paruga@krg.info",
+      "PersonalEmail": "paruga@gmail.com",
+      "Department": 0,
+      "id": 9
+    },
+    {
+      "Name": "Jocelin Fortunato",
+      "Phone": "060-0146",
+      "Extension": "532",
+      "CompanyEmail": "joc_fo@krg.info",
+      "PersonalEmail": "joc_fo@gmail.com",
+      "Department": 0,
+      "id": 10
+    },
+    {
+      "Name": "Fergus Didomenico",
+      "Phone": "867-0445",
+      "Extension": "541",
+      "CompanyEmail": "ferdidomen@krg.info",
+      "PersonalEmail": "ferdidomen@gmail.com",
+      "Department": 0,
+      "id": 11
+    },
+    {
+      "Name": "Parul Gauger",
+      "Phone": "984-0929",
+      "Extension": "436",
+      "CompanyEmail": "paruga@krg.info",
+      "PersonalEmail": "paruga@gmail.com",
+      "Department": 0,
+      "id": 12
+    },
+    {
+      "Name": "Jocelin Fortunato",
+      "Phone": "060-0146",
+      "Extension": "532",
+      "CompanyEmail": "joc_fo@krg.info",
+      "PersonalEmail": "joc_fo@gmail.com",
+      "Department": 0,
+      "id": 13
+    },
+    {
+      "Name": "Fergus Didomenico",
+      "Phone": "867-0445",
+      "Extension": "541",
+      "CompanyEmail": "ferdidomen@krg.info",
+      "PersonalEmail": "ferdidomen@gmail.com",
+      "Department": 0,
+      "id": 14
+    },
+    {
+      "Name": "Parul Gauger",
+      "Phone": "984-0929",
+      "Extension": "436",
+      "CompanyEmail": "paruga@krg.info",
+      "PersonalEmail": "paruga@gmail.com",
+      "Department": 0,
+      "id": 15
+    },
+    {
+      "Name": "Jocelin Fortunato",
+      "Phone": "060-0146",
+      "Extension": "532",
+      "CompanyEmail": "joc_fo@krg.info",
+      "PersonalEmail": "joc_fo@gmail.com",
+      "Department": 0,
+      "id": 16
+    },
+    {
+      "Name": "Fergus Didomenico",
+      "Phone": "867-0445",
+      "Extension": "541",
+      "CompanyEmail": "ferdidomen@krg.info",
+      "PersonalEmail": "ferdidomen@gmail.com",
+      "Department": 0,
+      "id": 17
+    },
+    {
+      "Name": "Parul Gauger",
+      "Phone": "984-0929",
+      "Extension": "436",
+      "CompanyEmail": "paruga@krg.info",
+      "PersonalEmail": "paruga@gmail.com",
+      "Department": 0,
+      "id": 18
+    },
+    {
+      "Name": "Jocelin Fortunato",
+      "Phone": "060-0146",
+      "Extension": "532",
+      "CompanyEmail": "joc_fo@krg.info",
+      "PersonalEmail": "joc_fo@gmail.com",
+      "Department": 0,
+      "id": 19
+    },
+    {
+      "Name": "Fergus Didomenico",
+      "Phone": "867-0445",
+      "Extension": "541",
+      "CompanyEmail": "ferdidomen@krg.info",
+      "PersonalEmail": "ferdidomen@gmail.com",
+      "Department": 0,
+      "id": 20
+    },
+    {
+      "Name": "Parul Gauger",
+      "Phone": "984-0929",
+      "Extension": "436",
+      "CompanyEmail": "paruga@krg.info",
+      "PersonalEmail": "paruga@gmail.com",
+      "Department": 0,
+      "id": 21
+    },
+    {
+      "Name": "Jocelin Fortunato",
+      "Phone": "060-0146",
+      "Extension": "532",
+      "CompanyEmail": "joc_fo@krg.info",
+      "PersonalEmail": "joc_fo@gmail.com",
+      "Department": 0,
+      "id": 22
+    },
+    {
+      "Name": "Fergus Didomenico",
+      "Phone": "867-0445",
+      "Extension": "541",
+      "CompanyEmail": "ferdidomen@krg.info",
+      "PersonalEmail": "ferdidomen@gmail.com",
+      "Department": 0,
+      "id": 23
+    }
+  ]
+}
