@@ -1,0 +1,68 @@
+
+.background{
+    width: 100%;
+	min-height: 100vh;
+	color: #fff;
+	background: linear-gradient(-45deg, #2f0743, #41295a, #021b79, #05cce6);
+	background-size: 600% 600%;
+	-webkit-animation: Gradient 20s ease infinite;
+	-moz-animation: Gradient 20s ease infinite;
+    animation: Gradient 20s ease infinite;
+	padding: 10rem 10rem;
+	overflow: hidden !important;
+}
+
+.formContainer{
+	color: #021b79;
+    padding: 2rem 2rem;
+    font-size: 1rem;
+	background-color: #FAFAFA;
+	box-shadow: rgba(0, 0, 0, 0.75) 0px 38px 94px -25px; 
+	
+}
+
+.logo{
+	background-image: url('../images/logo.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center; 
+	height: 5rem;
+	width: auto;
+}
+
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}

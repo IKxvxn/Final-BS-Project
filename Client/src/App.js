@@ -1,17 +1,21 @@
 import React from 'react'
-import 'font-awesome/css/font-awesome.css'
+import {NotificationContainer} from 'react-notifications';
+import {Route} from 'react-router-dom'
 
-import ExampleContainer from './Example/exampleContainer'
+import 'react-notifications/lib/notifications.css';
+import 'font-awesome/css/font-awesome.css'
+import './css/generalStyle.css'
+import './css/bootstrap.css'
+
+import Login from './login/loginContainer'
+import Home from './home/homeContainer'
 
 const App = () => {
-
     return (
       <div>
-        {/*Espacio para topBar*/}
-        <div>
-          {/*Espacio para demás contenido*/}
-          <ExampleContainer />
-        </div>
+        <Route exact path='/'  component={Home} />
+        <Route exact path='/home'  component={Home} />
+        <NotificationContainer />
       </div>
     );
 }

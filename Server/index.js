@@ -4,10 +4,9 @@ const mongoose = require('mongoose')
 const morgan = require('morgan')
 const cors = require('cors')
 const bodyParser = require('body-parser');
+const switcher = require('./switcher')
 
-const DB_QUERY_STRING = process.env.DB
-
-const exampleeRoutes = require('./routes/example')
+const loginRoute = require('./routes/loginRoute')
 const app = express()
 
 app.use(cors())
@@ -16,13 +15,13 @@ app.use(bodyParser.json())
 
 app.set('port', process.env.PORT || 8079)
 
-mongoose.connect(DB_QUERY_STRING)
+switcher.getMaster()
 
 app.get('/', (req, res) => {
   res.send('Example API HOME PAGE 💩')
 })
 
-app.use('/example', exampleeRoutes)
+app.use('/login', loginRoute)
 
 
 app.listen(app.get('port'), err => {
