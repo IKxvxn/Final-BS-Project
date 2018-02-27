@@ -32,7 +32,7 @@ class loginContainer extends Component {
   render() {
     return (
       <div className="background">
-          <div className="row">
+          <div className="flex-row">
               <LoginForm handleSignUp={this.handleSignUp} />
           </div>
       </div>

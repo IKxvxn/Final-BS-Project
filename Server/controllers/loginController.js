@@ -4,7 +4,6 @@ const switcher = require('../switcher')
 
 function signUp(req, res) {
   let item = req.body
-  console.log(item)
   let newUser = new signUpModel({
     _id: item._id,
     password: item.password,

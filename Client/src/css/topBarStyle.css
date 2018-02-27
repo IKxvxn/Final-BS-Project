@@ -1,0 +1,10 @@
+.topBarGeneral{
+    background: #212121;
+}
+
+.play_button {
+    position:fixed;
+    transition: .5s ease;
+    top: 50%;
+    left: 50%;
+}

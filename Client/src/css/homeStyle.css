@@ -1,0 +1,13 @@
+.paperPadd{
+    padding: 1rem;
+}
+
+.homeBG{
+    background: linear-gradient(-45deg, #ECEFF1, #F5F5F5, #CFD8DC, #E0E0E0);
+    background-size: 600% 600%;
+	-webkit-animation: Gradient 20s ease infinite;
+	-moz-animation: Gradient 20s ease infinite;
+    animation: Gradient 20s ease infinite;
+    min-height: 100vh
+}
+

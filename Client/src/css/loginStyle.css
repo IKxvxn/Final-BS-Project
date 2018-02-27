@@ -8,16 +8,19 @@
 	-webkit-animation: Gradient 20s ease infinite;
 	-moz-animation: Gradient 20s ease infinite;
     animation: Gradient 20s ease infinite;
-	padding: 10rem 10rem;
 	overflow: hidden !important;
+	padding: 0 3rem;
 }
 
 .formContainer{
-	color: #021b79;
     padding: 2rem 2rem;
     font-size: 1rem;
 	background-color: #FAFAFA;
-	box-shadow: rgba(0, 0, 0, 0.75) 0px 38px 94px -25px; 
+	position: relative;
+	display: block;
+	margin:10% auto;
+	box-shadow: rgba(0, 0, 0, 0.75) 0px 10px 80px -25px; 
+
 	
 }
 

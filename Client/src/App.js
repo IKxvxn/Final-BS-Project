@@ -13,8 +13,8 @@ import Home from './home/homeContainer'
 const App = () => {
     return (
       <div>
-        <Route exact path='/'  component={Home} />
-        <Route exact path='/home'  component={Home} />
+        <Route exact path='/'  component={Login} />
+        <Route path='/home'  component={Home} />
         <NotificationContainer />
       </div>
     );

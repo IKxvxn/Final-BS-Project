@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const switcher = require('./switcher')
 
 const loginRoute = require('./routes/loginRoute')
+const homeRoute = require('./routes/homeRoute')
 const app = express()
 
 app.use(cors())
@@ -22,6 +23,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/login', loginRoute)
+app.use('/home', homeRoute)
 
 
 app.listen(app.get('port'), err => {
