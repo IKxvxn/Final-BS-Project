@@ -1,10 +1,10 @@
 const configurationModel = require('../models/configurationModel')
-const signUpModel = require('../models/signUpModel')
+const accountModel = require('../models/accountModel')
 const switcher = require('../switcher')
 
 function signUp(req, res) {
   let item = req.body
-  let newUser = new signUpModel({
+  let newUser = new accountModel({
     _id: item._id,
     password: item.password,
     dbName: "CMS"+item.dbName

@@ -5,7 +5,7 @@ import { SketchPicker } from 'react-color'
 import {pickerCover, pickerPopover, pickerSwatch, pickerColor} from '../../css/materialStyle'
 
 
-class SketchExample extends React.Component {
+class colorPicker extends React.Component {
 
   constructor(props) {
     super(props);
@@ -50,4 +50,4 @@ class SketchExample extends React.Component {
   }
 }
 
-export default SketchExample
+export default colorPicker

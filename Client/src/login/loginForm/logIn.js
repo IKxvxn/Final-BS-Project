@@ -12,7 +12,6 @@ const maxLength10 = maxLength(10)
 class Form extends Component {
   
   render() {
-    const {reset} = this.props;
     return (
       <form className="col-md-6 formContainer ">
     
@@ -50,7 +49,7 @@ class Form extends Component {
             <RaisedButton label="Sign up" primary={true} style={buttonStyle} onClick={this.props.handleSignUp} />
           </div>
           <div className="col-md-12">
-            <RaisedButton label="Sign in" secondary={true} style={buttonStyle} onClick={reset} />
+            <RaisedButton label="Sign in" secondary={true} style={buttonStyle}  />
           </div>  
         </div>
       </form>

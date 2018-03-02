@@ -5,12 +5,14 @@
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require("webpack");
 
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './src/index.html',
   filename: 'index.html',
   inject: 'body'
 })
+
 
 
 module.exports = {
@@ -40,6 +42,8 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
   }, 
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [
+    new webpack.ProvidePlugin({$: "jquery",jQuery: "jquery"}),
+  HtmlWebpackPluginConfig]
 
 }

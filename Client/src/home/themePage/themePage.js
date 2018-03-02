@@ -3,15 +3,10 @@ import Paper from 'material-ui/Paper';
 import {Card, CardHeader} from 'material-ui/Card';
 import ColorPicker from './colorPicker';
 
-const style = {
-
-
-  };
-
 const themePage = (props) => {
     return (   
         <div className="paperPadd row">
-            <Paper className="col-md-12" style={style} zDepth={2}>
+            <Paper className="col-md-12"  zDepth={2}>
                 <Card className="row">
                     <CardHeader
                         title="Principal Color"

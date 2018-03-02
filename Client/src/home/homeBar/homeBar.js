@@ -12,7 +12,7 @@ import Book from 'material-ui/svg-icons/action/book';
 import Person from 'material-ui/svg-icons/social/person';
 import { Link } from 'react-router-dom'
 import FlatButton from 'material-ui/FlatButton';
-import {sideBarStyle} from '../../css/materialStyle'
+import {sideBarStyle,overlayStyle} from '../../css/materialStyle'
 
 
 
@@ -41,16 +41,15 @@ export default class homeBar extends React.Component {
           onClick={this.handleToggle}
           label="DashBoard"
           labelPosition="after"
-          secondary
           style={{
             color: barTextColor,
         }}
           icon={<DashBoard />}
         />
 
-        <Drawer open={this.state.open}  containerStyle={sideBarStyle}>
+        <Drawer zDepth={0} docked={false} overlayStyle={overlayStyle} open={this.state.open}  containerStyle={sideBarStyle} onRequestChange={(open) => this.setState({open})} >
           <Card>
-          <MenuItem style={{color:barEmphasize}} containerElement={<Link to={{pathname: '/home/profile'}} />} primaryText="Kevin" leftIcon={<Person color={barEmphasize} />} />
+          <MenuItem style={{color:barEmphasize}} containerElement={<Link to={{pathname: '/home/profile'}} />} primaryText={this.props.user} leftIcon={<Person color={barEmphasize} />} />
           </Card>
           <MenuItem style={{color:barBackgroundColor}} containerElement={<Link to={{pathname: '/home/configuration'}} />} primaryText="Configuration" leftIcon={<Settings color={barBackgroundColor} />} />
           <MenuItem style={{color:barBackgroundColor}} containerElement={<Link to={{pathname: '/home/themes'}} />} primaryText="Themes" leftIcon={<Colorlens color={barBackgroundColor} />} />

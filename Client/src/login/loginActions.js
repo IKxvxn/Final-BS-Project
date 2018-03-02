@@ -1,4 +1,6 @@
 import uuid from 'uuid/v1'
+import {showNotification} from '../notification/notification'
+import * as NT from '../notification/noticationTags'
 
 const API_URL = 'http://localhost:8079/login'
 const USER_CREATE_REQUEST = 'USER_CREATE_REQUEST'
@@ -18,15 +20,16 @@ export function userCreate(user,history) {
     })
       .then(response => response.json())
       .then((user) => {
+        dispatch({
+          type: USER_CREATE_SUCCESS,
+          user: user
+        })
         history.push({
           pathname: '/home',
           search: '',
           state: {}
         })
-        dispatch({
-          type: USER_CREATE_SUCCESS,
-          user: user
-        })
+        showNotification(NT.SUCCESS,NT.SUCCESS_ACCOUNT)
       })
       .catch(error => {
         dispatch({
