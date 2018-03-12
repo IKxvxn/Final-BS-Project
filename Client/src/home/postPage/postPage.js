@@ -11,7 +11,7 @@ import Create from 'material-ui/svg-icons/action/description';
 import Editor from './editor';
 import Posts from './posts';
 
-import {tabStyle, buttonStyle} from '../../css/materialStyle'
+import {tabStyle} from '../../css/materialStyle'
 
 
 class postPage extends React.Component {
@@ -36,9 +36,7 @@ class postPage extends React.Component {
       }
     
       handleTabbChange(value){
-        this.setState({
-          value: value,
-        });
+        this.clear(value)
       }
 
       handlepostTitleChange(event){
@@ -64,14 +62,16 @@ class postPage extends React.Component {
       handleMode(){
         if(this.state.postID!=""){
           return(<CardActions>
+                   <FlatButton  rippleColor={this.props.homeStyle.barEmphasize} label="Back" onClick={()=>this.clear("1")} icon={<Cancel />} />
                    <FlatButton  rippleColor={this.props.homeStyle.barEmphasize} label="Update" onClick={this.handlePostUpdate} icon={<Update />} />
-                   <FlatButton rippleColor={this.props.homeStyle.barEmphasize}  onClick={()=>this.clear("2")} label="Clear" icon={<Clear />}  />
                    <FlatButton rippleColor={this.props.homeStyle.barEmphasize} label="Create" onClick={this.handlePostCreate} icon={<Create />}    />
+                   <FlatButton rippleColor={this.props.homeStyle.barEmphasize}  onClick={()=>this.clear("2")} label="Clear" icon={<Clear />}  />
                  </CardActions>) 
         }
           return(<CardActions>
-                   <FlatButton rippleColor={this.props.homeStyle.barEmphasize}  onClick={()=>this.clear("2")} label="Clear" icon={<Clear />}  />
+                   <FlatButton  rippleColor={this.props.homeStyle.barEmphasize} label="Back" onClick={()=>this.clear("1")} icon={<Cancel />} />
                    <FlatButton rippleColor={this.props.homeStyle.barEmphasize} label="Create" onClick={this.handlePostCreate} icon={<Create />}    />
+                   <FlatButton rippleColor={this.props.homeStyle.barEmphasize}  onClick={()=>this.clear("2")} label="Clear" icon={<Clear />}  />
                  </CardActions>) 
           
       }
@@ -97,7 +97,6 @@ class postPage extends React.Component {
     
       render() {
         return (
-
         <div className="paperPadd row">
             <Paper className="col-md-12"  zDepth={2}>
                 <Tabs
@@ -108,7 +107,7 @@ class postPage extends React.Component {
                   onChange={this.handleTabbChange}
                 >
                     <Tab className="col-sm-6" label={<span style={{ color:this.props.homeStyle.barTextColor}}>Posts</span>} value="1" >
-                      <Posts posts={this.props.posts} handleChangeState={this.editMode} />
+                      <Posts color={this.props.homeStyle.barEmphasize} posts={this.props.posts} deletePost={this.props.handlers.deletePost} handleChangeState={this.editMode} />
                     </Tab>
                     <Tab className="col-sm-6" label={<span style={{ color:this.props.homeStyle.barTextColor}}>Editor</span>} value="2">
                         <TextField

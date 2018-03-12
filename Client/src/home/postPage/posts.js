@@ -3,8 +3,8 @@ import Post from './post';
 
 const posts = (props) => {
     return (
-        <div >
-            {props.posts.map(function(post) {return <Post post={post} handleChangeState={props.handleChangeState}/>}) }    
+        <div className="postsContainer">
+            {props.posts.map(function(post) {return <Post key={post._id} post={post} deletePost={props.deletePost} color={props.color} handleChangeState={props.handleChangeState}/>}) }    
         </div>
     );
 }

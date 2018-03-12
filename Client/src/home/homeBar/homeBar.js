@@ -49,13 +49,12 @@ export default class homeBar extends React.Component {
 
         <Drawer zDepth={0} docked={false} overlayStyle={overlayStyle} open={this.state.open}  containerStyle={sideBarStyle} onRequestChange={(open) => this.setState({open})} >
           <Card>
-          <MenuItem style={{color:barEmphasize}} containerElement={<Link to={{pathname: '/home/profile'}} />} primaryText={this.props.user} leftIcon={<Person color={barEmphasize} />} />
+          <MenuItem style={{color:barEmphasize}} disabled containerElement={<Link to={{pathname: '/home/profile'}} />} primaryText={this.props.user} leftIcon={<Person color={barEmphasize} />} />
           </Card>
           <MenuItem style={{color:barBackgroundColor}} containerElement={<Link to={{pathname: '/home/configuration'}} />} primaryText="Configuration" leftIcon={<Settings color={barBackgroundColor} />} />
           <MenuItem style={{color:barBackgroundColor}} containerElement={<Link to={{pathname: '/home/themes'}} />} primaryText="Themes" leftIcon={<Colorlens color={barBackgroundColor} />} />
           <MenuItem style={{color:barBackgroundColor}} containerElement={<Link to={{pathname: '/home/posts'}} />} primaryText="Posts" leftIcon={<Book color={barBackgroundColor} />} />
-          <MenuItem style={{color:barBackgroundColor}} containerElement={<Link to={{pathname: '/home/live'}} />} primaryText="Live" leftIcon={<RemoveRedEye color={barBackgroundColor} />} />
-          <MenuItem style={{color:barBackgroundColor}} containerElement={<Link to={{pathname: '/'}} />} primaryText="Logout" leftIcon={<Personpin color={barBackgroundColor} />} />
+          <MenuItem style={{color:barBackgroundColor}} onClick={()=>this.props.logout()} containerElement={<Link to={{pathname: '/'}} />} primaryText="Logout" leftIcon={<Personpin color={barBackgroundColor} />} />
         </Drawer>
           
         </ToolbarGroup>

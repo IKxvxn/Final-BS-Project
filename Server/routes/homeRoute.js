@@ -5,7 +5,8 @@ const router = express.Router()
 router.put('/props', homeController.upDateProps)
 router.post('/post', homeController.createPost)
 router.put('/post', homeController.upDatePost)
-
-router.get('/', homeController.getAll)
+router.delete('/post', homeController.deletePost)
+router.get('/', homeController.getProps)
+router.get('/post', homeController.getPosts)
 
 module.exports = router

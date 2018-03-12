@@ -14,6 +14,7 @@ class loginContainer extends Component {
     super(props);
   
     this.handleSignUp = this.handleSignUp.bind(this);
+    this.handleSignIn = this.handleSignIn.bind(this);
   }
 
   componentDidMount(){}
@@ -29,11 +30,22 @@ class loginContainer extends Component {
     this.props.userCreate({_id:values.name,password:values.password},history)
   }
 
+  handleSignIn(){
+    const values = this.props.form.values
+    const history = this.props.history
+    
+    if(values == undefined || Object.keys(values).length<2){
+      showNotification(NT.WARNING,NT.WARING_FIELD_REQUIRED)
+      return
+    }
+    this.props.userLog({_id:values.name,password:values.password},history)
+  }
+
   render() {
     return (
       <div className="background">
           <div className="flex-row">
-              <LoginForm handleSignUp={this.handleSignUp} />
+              <LoginForm handleSignUp={this.handleSignUp} handleSignIn={this.handleSignIn} />
           </div>
       </div>
     );
@@ -63,7 +75,8 @@ function mapStateToProps(state) {
 {/*Save the redux dispatchers into the container state*/}
 function mapDispatchToProps(dispatch) {
   return {
-    userCreate: (user,history)  => dispatch(loginActions.userCreate(user,history))
+    userCreate: (user,history)  => dispatch(loginActions.userCreate(user,history)),
+    userLog: (user,history)  => dispatch(loginActions.userLog(user,history))
   }
 }
 

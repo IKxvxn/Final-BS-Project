@@ -49,7 +49,7 @@ class Form extends Component {
             <RaisedButton label="Sign up" primary={true} style={buttonStyle} onClick={this.props.handleSignUp} />
           </div>
           <div className="col-md-12">
-            <RaisedButton label="Sign in" secondary={true} style={buttonStyle}  />
+            <RaisedButton label="Sign in" secondary={true} style={buttonStyle} onClick={this.props.handleSignIn} />
           </div>  
         </div>
       </form>

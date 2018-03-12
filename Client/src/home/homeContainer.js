@@ -10,6 +10,7 @@ import '../css/homeStyle.css'
 import TopBar from './homeBar/homeBar'
 import ThemePage from './themePage/themePage'
 import PostPage from './postPage/postPage'
+import ConfigurationPage from './configurationPage/configurationPage'
 
 class homeContainer extends Component {
   constructor(props) {
@@ -20,10 +21,16 @@ class homeContainer extends Component {
     this.createPost = this.createPost.bind(this);
     this.updatePost = this.updatePost.bind(this);
     this.saveProps = this.saveProps.bind(this);
+    this.configurationRender = this.configurationRender.bind(this);
+    this.themeRender = this.themeRender.bind(this);
+
+    this.handleBrandChange=this.handleBrandChange.bind(this)
   }
 
-  componentDidMount(){
-    this.props.getProps()
+  componentWillMount(){
+    if(this.props.userInfo._id==undefined){this.props.loadState(this.props.history)}
+    this.props.getProps();
+    this.props.getPosts()
   }
 
   saveProps(){
@@ -38,6 +45,11 @@ class homeContainer extends Component {
   updatePost(title,content,_id){
     if(title==""|content==""){showNotification(NT.WARNING,NT.WARING_FIELD_REQUIRED); return}
     this.props.updatePost(title,content,_id)
+  }
+  handleBrandChange(name){
+    if(name==""){showNotification(NT.WARNING,NT.WARING_FIELD_REQUIRED);return}
+    this.props.changeBrandName(name)
+
   }
 
   themeRender(){
@@ -58,18 +70,29 @@ class homeContainer extends Component {
         homeStyle={this.props.homeStyle} 
         posts={this.props.posts} 
         handlers={{createPost:this.createPost,
-                   updatePost:this.updatePost}}
+                   updatePost:this.updatePost,
+                   deletePost:this.props.deletePost}}
       />
     );
   }
 
+configurationRender(){
+    return (
+      <ConfigurationPage 
+        homeStyle={this.props.homeStyle}
+        handlers={{handleBrandChange:this.handleBrandChange}}
+      />
+    );
+  }
+
+
   render() {
     return (
       <div className="container-fluid homeBG">
-          <TopBar homeStyle={this.props.homeStyle} user={this.props.userInfo._id} />
+          <TopBar logout={this.props.logout} homeStyle={this.props.homeStyle} user={this.props.userInfo._id} />
           <Route path='/home/themes' render={this.themeRender}  />
           <Route path='/home/posts' render={this.postRender}  />
-
+          <Route path='/home/configuration' render={this.configurationRender}  />
       </div>
     );
   }
@@ -102,10 +125,15 @@ function mapDispatchToProps(dispatch) {
     changeBBGC: (color) => dispatch(homeActions.changeBar_BGC(color)),
     changeBESC: (color) => dispatch(homeActions.changeBar_ESC(color)),
     changeBTXC: (color) => dispatch(homeActions.changeBar_TXC(color)),
+    changeBrandName: (name) => dispatch(homeActions.changeBrandName(name)),
     saveProps: (Props) => dispatch(homeActions.saveProps(Props)),
     getProps: () => dispatch(homeActions.getProps()),
     createPost: (title,content,autor,response) => dispatch(homeActions.createPost({title:title,content:content,autor:autor},response)),
-    updatePost: (title,content,_id) => dispatch(homeActions.updatePost({title:title,content:content,_id:_id}))
+    updatePost: (title,content,_id) => dispatch(homeActions.updatePost({title:title,content:content,_id:_id})),
+    getPosts: () => dispatch(homeActions.getPosts()),
+    deletePost: (id) => dispatch(homeActions.deletePost(id)),
+    loadState: () => dispatch(homeActions.loadState()),
+    logout: () => dispatch(homeActions.logout())
   }
 }
 

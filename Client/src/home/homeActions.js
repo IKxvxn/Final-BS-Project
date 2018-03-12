@@ -19,7 +19,29 @@ const CREA_POST_FAILURE = 'CREA_POST_FAILURE'
 const UPDATE_POST_REQUEST = 'UPDATE_POST_REQUEST'
 const UPDATE_POST_SUCCESS = 'UPDATE_POST_SUCCESS'
 const UPDATE_POST_FAILURE = 'UPDATE_POST_FAILURE'
+const GET_POST_REQUEST = 'GET_POST_REQUEST'
+const GET_POST_SUCCESS = 'GET_POST_SUCCESS'
+const GET_POST_FAILURE = 'GET_POST_FAILURE'
+const DELETE_POST_REQUEST = 'DELETE_POST_REQUEST'
+const DELETE_POST_SUCCESS = 'DELETE_POST_SUCCESS'
+const DELETE_POST_FAILURE = 'DELETE_POST_FAILURE'
+const CHANGE_BRAND_NAME = 'CHANGE_BRAND_NAME'
 
+
+
+const USER_LOAD_STATE = 'USER_LOAD_STATE'
+const LOGOUT = 'LOGOUT'
+
+
+
+export const loadState = (history) => ({
+    type: USER_LOAD_STATE,
+    history:history
+})
+
+export const logout = () => ({
+  type: LOGOUT
+})
 
 export const changeBar_BGC = (color) => ({
     type:THEME_BBGC_REQUEST,
@@ -32,6 +54,10 @@ export const changeBar_ESC = (color) => ({
 export const changeBar_TXC = (color) => ({
   type:THEME_BTXC_REQUEST,
   color:color
+})
+export const changeBrandName = (name) => ({
+  type:CHANGE_BRAND_NAME,
+  name:name
 })
 
 export function saveProps(props) {
@@ -97,7 +123,7 @@ export function saveProps(props) {
             post: post
           })
           response(post._id)
-          showNotification(NT.SUCCESS,NT.SUCCESS_ACCOUNT)
+          showNotification(NT.SUCCESS,NT.SUCCESS_CREATE_POST)
         })
         .catch(error => {
           dispatch({
@@ -124,6 +150,7 @@ export function updatePost(post) {
         dispatch({
           type: UPDATE_POST_SUCCESS,
           post:result})
+          showNotification(NT.SUCCESS,NT.SUCCESS_UPDATE_POST)
       })
       .catch(error => {
         dispatch({
@@ -133,3 +160,55 @@ export function updatePost(post) {
       })
   }
 }
+
+export function deletePost(id){
+  return function (dispatch) {
+    dispatch({
+      type: DELETE_POST_REQUEST
+    })
+    fetch(API_URL+"/post", {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ id })
+    })
+      .then(response => response.json())
+      .then(() => {
+        dispatch({
+          type: DELETE_POST_SUCCESS,
+          _id: id
+        })
+      })
+      .catch(error => {
+        dispatch({
+          type: DELETE_POST_FAILURE,
+          error: error
+        });
+      })
+  }
+}
+
+export function getPosts() {
+  return function (dispatch) {
+      dispatch({
+        type: GET_POST_REQUEST
+      })
+      fetch(API_URL+"/post")
+        .then(response => response.json())
+        .then(posts => {
+          dispatch({
+            type: GET_POST_SUCCESS,
+            posts: posts
+          })
+        })
+        .catch(error => {
+          dispatch({
+            type: GET_POST_FAILURE,
+            error: error
+          })
+        })
+    }
+}
+
+

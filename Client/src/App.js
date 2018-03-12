@@ -1,6 +1,6 @@
 import React from 'react'
 import {NotificationContainer} from 'react-notifications';
-import {Route} from 'react-router-dom'
+import {Route,Switch} from 'react-router-dom'
 
 import 'react-notifications/lib/notifications.css';
 import 'font-awesome/css/font-awesome.css'
@@ -13,8 +13,10 @@ import Home from './home/homeContainer'
 const App = () => {
     return (
       <div>
-        <Route exact path='/'  component={Login} />
-        <Route path='/home'  component={Home} />
+        <Switch>
+          <Route path='/home'  component={Home} />
+          <Route component={Login} />
+        </Switch>
         <NotificationContainer />
       </div>
     );

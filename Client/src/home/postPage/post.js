@@ -53,8 +53,8 @@ export default class CardExampleControlled extends React.Component {
           <FroalaEditorView model={this.props.post.content} />
         </CardText>
         <CardActions>
-          <FlatButton label="Edit" onClick={() => {this.props.handleChangeState(this.props.post.title,this.props.post.content,this.props.post._id)}} icon={<Edit />} />
-          <FlatButton label="Delete" icon={<Delete />} />
+          <FlatButton rippleColor={this.props.color} label="Edit" onClick={() => {this.props.handleChangeState(this.props.post.title,this.props.post.content,this.props.post._id)}} icon={<Edit />} />
+          <FlatButton rippleColor={this.props.color} label="Delete" onClick={() => {this.props.deletePost(this.props.post._id)}} icon={<Delete />} />
         </CardActions>
       </Card>
     );

@@ -1,7 +1,7 @@
 const configuration = require('../models/configurationModel')
 const post = require('../models/postModel')
 const switcher = require('../switcher')
-require('mongoose').set('debug', true);
+const mongoose = require('mongoose')
 
 function upDateProps(req, res) {
   var props = req.body
@@ -22,12 +22,12 @@ function upDateProps(req, res) {
     
 }
 
-function getAll(req, res) {
+function getProps(req, res) {
   configuration.find()
     .exec((err, configurations) => {
       if (err) {
         res.status(500)
-        res.send(`Ocurrió un error 💩 ${err}`)
+        res.send(`An error has ocurred ${err}`)
       }
       res.status(200)
       res.json(configurations)
@@ -60,9 +60,32 @@ function upDatePost(req, res) {
     
 }
 
+function getPosts(req, res) {
+  post.find().sort('-created')
+    .exec((err, posts) => {
+      if (err) {
+        res.status(500)
+        res.send(`An error has ocurred ${err}`)
+      }
+      res.status(200)
+      res.json(posts)
+    })
+}
+
+function deletePost(req, res){
+  let id = mongoose.Types.ObjectId(req.body.id)
+  post.deleteOne({ "_id" : id }, (err, posts) =>{
+    if(err){
+      res.status(500)
+      res.send(`Cannot delete post ${err}`)
+    }
+    res.status(200);
+    res.json(posts)
+  })
+}
 
 module.exports = {
-  upDateProps,getAll,createPost,upDatePost
+  upDateProps,getProps,createPost,upDatePost,getPosts,deletePost
 }
 
 

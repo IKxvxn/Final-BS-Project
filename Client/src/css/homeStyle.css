@@ -11,3 +11,9 @@
     min-height: 100vh
 }
 
+.postsContainer{
+    background-color: red;
+    max-height: 74vh;
+    overflow: auto;
+}
+
